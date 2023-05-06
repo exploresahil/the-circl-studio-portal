@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "helvetica_now_light";
+  src: url("./fonts/helveticanowdisplay-extlt.woff2") format("woff2"),
+    url("./fonts/helveticanowdisplay-extlt.woff") format("woff");
+  font-weight: light;
+  font-style: normal;
+}
+@font-face {
+  font-family: "helvetica_now_medium";
+  src: url("./fonts/helveticanowdisplay-medium.woff2") format("woff2"),
+    url("./fonts/helveticanowdisplay-medium.woff") format("woff");
+  font-weight: medium;
+  font-style: normal;
+}
+@font-face {
+  font-family: "helvetica_now_regular";
+  src: url("./fonts/helveticanowdisplay-regular.woff2") format("woff2"),
+    url("./fonts/helveticanowdisplay-regular.woff") format("woff");
+  font-weight: regular;
+  font-style: normal;
+}
+
+$helvetica: "helvetica_now_regular", sans-serif;
+$helveticaMed: "helvetica_now_medium", sans-serif;
+$helveticaLight: "helvetica_now_light", sans-serif;
+
+$dark: rgb(23, 23, 23);
+$light: rgb(244, 244, 244);
+
+$orange: rgb(241, 112, 1);
+$purple: rgba(116, 32, 124, 1);
+$darkBlue: rgba(25, 26, 30, 1);
+$lightBlue: rgba(38, 188, 221, 1);
