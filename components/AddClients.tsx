@@ -1,3 +1,5 @@
+"use client";
+
 import { AiFillCloseCircle } from "react-icons/ai";
 import { MdOutlinePublish } from "react-icons/md";
 import { BiCloudUpload, BiImageAdd } from "react-icons/bi";
@@ -143,7 +145,7 @@ function AddClients({ onClose }: Props) {
                   fill
                   style={{ objectFit: "contain" }}
                 />
-                <BiImageAdd size={25} />
+
                 <button
                   type="button"
                   className="clear-image"
@@ -166,7 +168,7 @@ function AddClients({ onClose }: Props) {
 
             <input
               type="file"
-              accept=".png"
+              accept=".png, .svg"
               placeholder="add brand name of the client"
               ref={fileInputRef}
               onChange={handleFileInputChange}

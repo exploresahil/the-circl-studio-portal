@@ -182,13 +182,13 @@
     height: 105px;
     border-radius: 10px;
     overflow: hidden;
-    border: 1px solid v.$light;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     .clear-image {
+      cursor: pointer;
       position: absolute;
       bottom: 5px;
       z-index: 5;
@@ -197,11 +197,19 @@
       height: 20px !important;
 
       display: flex !important;
-      justify-content: space-between !important;
+      justify-content: center !important;
+      gap: 0.5em;
 
       border: none;
       color: v.$light !important;
-      background: v.$dark !important;
+
+      background-color: rgba(241, 113, 1, 0.25);
+      border-radius: 10px;
+
+      &:hover {
+        background-color: v.$light !important;
+        color: v.$dark !important;
+      }
     }
   }
 }
