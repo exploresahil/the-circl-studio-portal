@@ -1,0 +1,66 @@
+@use "./veriables" as v;
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100vw;
+  height: 60px;
+  padding: 0 8vw;
+
+  //*-> colors
+  background-color: v.$dark;
+
+  .header-circl-logo {
+    position: relative;
+    width: 80px;
+    height: 20px;
+  }
+
+  nav {
+    ul {
+      display: flex;
+      gap: 2em;
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        color: v.$green;
+
+        &:hover {
+          color: v.$orange;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  header {
+    padding: 0 6vw;
+    nav {
+      ul {
+        display: flex;
+        gap: 0.5em;
+
+        a {
+          display: flex;
+          align-items: center;
+          gap: 0.5em;
+          color: v.$green;
+
+          &:hover {
+            color: v.$orange;
+          }
+        }
+      }
+    }
+  }
+}

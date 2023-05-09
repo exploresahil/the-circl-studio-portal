@@ -1,0 +1,74 @@
+@use "./veriables" as v;
+
+.clients-main-container {
+  width: 100vw;
+  height: calc(100vh - 60px);
+  padding: 0 10vw;
+
+  //*-> colors
+}
+
+.ChientLoginPage-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  form {
+    width: 40vw;
+    height: 500px;
+    padding: 20px 10%;
+
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+
+    text-align: center;
+
+    //*-> colors
+    background-color: v.$dark;
+
+    .circl-logo {
+      position: relative;
+      width: 100%;
+      height: 80px;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .ChientLoginPage-form-container {
+    form {
+      width: 60vw;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ChientLoginPage-form-container {
+    form {
+      width: 90vw;
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .ChientLoginPage-form-container {
+    form {
+      width: 90vw;
+      height: 350px;
+    }
+  }
+
+  .login-title {
+    p {
+      font-size: 0.8rem;
+    }
+  }
+}

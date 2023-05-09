@@ -1,0 +1,47 @@
+@use "./veriables" as v;
+
+.added-client-card {
+  width: calc(33% - 5px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: v.$light;
+
+  padding: 16px;
+  border-radius: 10px;
+
+  .client-logo-container {
+    position: relative;
+    width: 60px;
+    height: 60px;
+  }
+
+  .added-client-card-right {
+    background: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    h3 {
+      color: v.$dark;
+    }
+
+    button {
+      cursor: pointer;
+      width: auto;
+      background-color: v.$dark;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5em;
+      height: 25px;
+      padding: 0 16px;
+      color: v.$light;
+
+      &:hover {
+        color: v.$light;
+        background-color: v.$orange;
+      }
+    }
+  }
+}

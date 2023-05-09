@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 346.54 48.08">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-family: HelveticaNowDisplay-Regular, 'Helvetica Now Display';
+        font-size: 40.82px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <text class="cls-2" transform="translate(87.02 34.94)"><tspan x="0" y="0">the circl studio</tspan></text>
+      <g>
+        <path class="cls-1" d="M17.25,17.36H0c0,9.53,7.72,17.25,17.25,17.25h17.25c0-9.53-7.72-17.25-17.25-17.25Z"/>
+        <path class="cls-1" d="M51.75,17.36h17.25c0,9.53-7.72,17.25-17.25,17.25h-17.25c0-9.53,7.72-17.25,17.25-17.25Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
