@@ -7,6 +7,14 @@ import "react-quill/dist/quill.snow.css";
 import dynamic from "next/dynamic";
 import { useRef, useState } from "react";
 
+//*--->Form to Card
+import { Client } from "../interfaces/Client";
+
+interface AddClientProps {
+  onPublish: (client: Client) => void;
+  initialValues?: Client;
+}
+
 const ReactQuill = dynamic(() => import("react-quill"), {
   ssr: false,
 });
@@ -20,7 +28,46 @@ type FileWithPreview = {
   previewUrl: string;
 };
 
-function AddClient({ onClose }: Props) {
+function AddClient({ onClose }: Props, { onPublish, initialValues }) {
+  //*--->Form to Card
+  const [formData, setFormData] = useState<Client>({
+    id: initialValues?.id ?? "",
+    clientName: initialValues?.clientName ?? "",
+    brandName: initialValues?.brandName ?? "",
+    brandDescription: initialValues?.brandDescription ?? "",
+    brandLogo: initialValues?.brandLogo ?? "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files && e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormData((prevData) => ({
+          ...prevData,
+          brandLogo: reader.result as string,
+        }));
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (initialValues) {
+      // Update client logic
+    } else {
+      onPublish(formData);
+    }
+  };
+
+  //*-----------------------------> Close Card
+
   const handleClose = () => {
     onClose();
   };
@@ -29,7 +76,7 @@ function AddClient({ onClose }: Props) {
 
   const [value, setValue] = useState("");
 
-  function handleChange(newValue: string) {
+  function handleRichChange(newValue: string) {
     setValue(newValue);
     console.log(newValue);
   }
@@ -113,7 +160,6 @@ function AddClient({ onClose }: Props) {
   const handleOtherUploadButtonClick = () => {
     otherFileInputRef.current?.click();
   };
- 
 
   return (
     <div className="add-client-main">
@@ -127,7 +173,7 @@ function AddClient({ onClose }: Props) {
         </div>
         <div className="line" />
         <div className="add-client-form">
-          <form action="#">
+          <form action="#" onSubmit={handleSubmit}>
             <div className="form-input">
               <label htmlFor="#">Client Name:</label>
               <input type="text" placeholder="add full name of the client" />
@@ -142,7 +188,7 @@ function AddClient({ onClose }: Props) {
               <label htmlFor="#">Description:</label>
               <ReactQuill
                 value={value}
-                onChange={handleChange}
+                onChange={handleRichChange}
                 className="rich-text-editor"
               />
             </div>
